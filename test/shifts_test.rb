@@ -25,4 +25,10 @@ class ShiftsTest < Minitest::Test
     assert_equal "200792", @shifts.date
   end
 
+  def test_it_can_make_offsets
+    expected = ['7', '2', '6', '4']
+
+    assert_equal expected, @shifts.make_offsets
+  end
+
 end
