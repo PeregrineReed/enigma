@@ -21,4 +21,8 @@ class ShiftsTest < Minitest::Test
     assert_equal "00001", @shifts.key
   end
 
+  def test_it_has_a_date
+    assert_equal "200792"
+  end
+
 end
