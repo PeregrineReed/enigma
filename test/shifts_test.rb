@@ -17,4 +17,8 @@ class ShiftsTest < Minitest::Test
     assert_instance_of Shifts, shifts
   end
 
+  def test_it_has_a_key
+    assert_equal "00001", @shifts.key
+  end
+
 end
