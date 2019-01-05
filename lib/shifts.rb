@@ -3,7 +3,7 @@ class Shifts
   attr_reader :key,
               :date
 
-  def initialize(key: "00001", date: "200792")
+  def initialize(key, date)
     @key = key
     @date = date
   end
