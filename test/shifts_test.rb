@@ -22,7 +22,7 @@ class ShiftsTest < Minitest::Test
   end
 
   def test_it_has_a_date
-    assert_equal "200792"
+    assert_equal "200792", @shifts.date
   end
 
 end
