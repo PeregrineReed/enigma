@@ -29,7 +29,7 @@ class ShiftsTest < Minitest::Test
   def test_it_can_make_offsets
     expected = ['7', '2', '6', '4']
 
-    assert_equal expected, Shifts.make_offsets("200792")
+    assert_equal expected, Shifts.offsets("200792")
   end
 
   def test_it_can_list_keys
