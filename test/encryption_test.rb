@@ -11,4 +11,8 @@ class EncryptionTest < Minitest::Test
     assert_instance_of Encryption, @encryption
   end
 
+  def test_it_has_a_message
+    assert_equal "message", @encryption.message
+  end
+
 end
