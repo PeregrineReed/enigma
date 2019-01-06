@@ -9,17 +9,14 @@ class ShiftsTest < Minitest::Test
   end
 
   def test_it_exists
-    skip
     assert_instance_of Shifts, @shifts
   end
 
   def test_it_has_a_key
-    skip
     assert_equal "00001", @shifts.key
   end
 
   def test_it_has_a_date
-    skip
     assert_equal "200792", @shifts.date
   end
 
