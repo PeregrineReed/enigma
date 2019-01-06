@@ -24,8 +24,8 @@ class Shifts
     key_list
   end
 
-  def make_keys
-    list_keys(key).map do |pair|
+  def self.keys(key)
+    make_key_pairs(key).map do |pair|
       pair.join
     end.flatten
   end
