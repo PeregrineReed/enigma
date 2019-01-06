@@ -25,7 +25,19 @@ class ShiftsTest < Minitest::Test
     assert_equal expected, @shifts.make_offsets
   end
 
+  def test_it_can_list_keys
+    expected = [
+      ["0", "0"],
+      ["0", "0"],
+      ["0", "0"],
+      ["0", "1"]
+    ]
+
+    assert_equal expected, @shifts.list_keys
+  end
+
   def test_it_can_make_keys
+    skip
     expected = ['00', '00', '00', '01']
 
     assert_equal expected, @shifts.make_keys
