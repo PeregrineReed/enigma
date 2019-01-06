@@ -4,8 +4,8 @@ require './lib/shifts'
 class ShiftsTest < Minitest::Test
 
   def setup
-    skip
-    @shifts = Shifts.new("00001", "200792")
+    shifts = [7, 2, 6, 5]
+    @shifts = Shifts.new(shifts, "00001", "200792")
   end
 
   def test_it_exists
