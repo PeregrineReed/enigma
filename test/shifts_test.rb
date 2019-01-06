@@ -43,12 +43,7 @@ class ShiftsTest < Minitest::Test
   end
 
   def test_it_can_make_shifts
-    expected = {
-      A: 7,
-      B: 2,
-      C: 6,
-      D: 5
-    }
+    expected = [7, 2, 6, 5]
 
     assert_equal expected, @shifts.make_shifts
   end
