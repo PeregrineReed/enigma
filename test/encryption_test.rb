@@ -4,7 +4,7 @@ require './lib/encryption'
 class EncryptionTest < Minitest::Test
 
   def setup
-    @encryption = Encryption.new('message')
+    @encryption = Encryption.new('message', '00001', '200792')
   end
 
   def test_it_exists
