@@ -1,9 +1,11 @@
 class Shifts
 
-  attr_reader :key,
+  attr_reader :set,
+              :key,
               :date
 
   def initialize(set, key, date)
+    @set = set
     @key = key
     @date = date
   end
