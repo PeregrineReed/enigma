@@ -49,11 +49,11 @@ class ShiftsTest < Minitest::Test
     assert_equal expected, Shifts.keys('00001')
   end
 
-  def test_it_can_make_shifts
-    skip
+  def test_it_can_initialize_for_encryption
+    shifts = Shifts.for_encryption('00001', '200792')
     expected = [7, 2, 6, 5]
 
-    assert_equal expected, @shifts.make_shifts
+    assert_equal expected, shifts.set
   end
 
 end
