@@ -8,4 +8,8 @@ class Encryption
     @shifts = Shifts.for_encryption(key, date).set
   end
 
+  def split_message
+    message.split('')
+  end
+
 end
