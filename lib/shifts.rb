@@ -3,7 +3,7 @@ class Shifts
   attr_reader :key,
               :date
 
-  def initialize(key, date)
+  def initialize(set, key, date)
     @key = key
     @date = date
   end
@@ -23,7 +23,7 @@ class Shifts
   end
 
   def make_keys
-    list_keys.map do |pair|
+    list_keys(key).map do |pair|
       pair.join
     end.flatten
   end
