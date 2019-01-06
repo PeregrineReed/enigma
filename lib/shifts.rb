@@ -14,4 +14,12 @@ class Shifts
     offsets.split('')
   end
 
+  def list_keys
+    key_list = []
+    key.split('').each_cons(2) do |key|
+      key_list << key
+    end
+    key_list
+  end
+
 end
