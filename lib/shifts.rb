@@ -28,4 +28,11 @@ class Shifts
     end.flatten
   end
 
+  def make_shifts
+    shifts = make_keys.zip(make_offsets)
+    shifts = shifts.map do |pair|
+      pair[0].to_i + pair[1].to_i
+    end.flatten
+  end
+
 end
