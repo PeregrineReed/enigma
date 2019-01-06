@@ -7,4 +7,8 @@ class EncryptionTest < Minitest::Test
     @encryption = Encryption.new('message')
   end
 
+  def test_it_exists
+    assert_instance_of Encryption, @encryption
+  end
+
 end
