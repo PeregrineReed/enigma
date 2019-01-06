@@ -20,4 +20,10 @@ class EncryptionTest < Minitest::Test
     assert_equal [7, 2, 6, 5], @encryption.shifts
   end
 
+  def test_it_can_split_its_message
+    expected = ['m', 'e', 's', 's', 'a', 'g', 'e']
+
+    assert_equal expected, @encryption.split_message
+  end
+
 end
