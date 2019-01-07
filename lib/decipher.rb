@@ -8,6 +8,10 @@ class Decipher
     @shifts = Shifts.new(key, date).set
   end
 
+  def characters
+    ('a'..'z').to_a << ' '
+  end
+
   def decrypt_4_digits(four)
     four.map do |letter|
       shift = @shifts[four.index(letter)]
