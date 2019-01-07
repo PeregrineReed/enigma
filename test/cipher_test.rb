@@ -38,4 +38,10 @@ class CipherTest < Minitest::Test
     assert_equal expected, @cipher.encrypt_4_digits(message)
   end
 
+  def test_it_can_encrypt_any_length_message
+    expected = 'tgyyhik'
+
+    assert_equal expected, @cipher.translate
+  end
+
 end
