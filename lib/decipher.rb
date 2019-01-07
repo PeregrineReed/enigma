@@ -8,4 +8,12 @@ module Decipher
     end.flatten.join
   end
 
+  def translate
+    code = []
+    split_message.each_slice(4) do |slice|
+      code << decrypt_4_digits(slice)
+    end
+    code.join
+  end
+
 end
