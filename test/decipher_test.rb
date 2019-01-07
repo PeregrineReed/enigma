@@ -4,13 +4,18 @@ require './lib/decipher'
 class DecipherClass
   include Decipher
 
+  def initialize(shifts)
+    @shifts = shifts
+  end
+
+  def split_message
+    ['t', 'g', 'y', 'y', 'h', 'i', 'k']
+  end
+
   def characters
     ('a'..'z').to_a << ' '
   end
 
-  def initialize(shifts)
-    @shifts = shifts
-  end
 end
 
 class DecipherTest < Minitest::Test
