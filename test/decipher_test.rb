@@ -12,8 +12,10 @@ class DecipherTest < Minitest::Test
     assert_instance_of Decipher, @decipher
   end
 
-  def test_it_has_an_input_message
-    assert_equal 'tgyyhik', @decipher.input
+  def test_it_splits_its_input_message
+    expected = ['t', 'g', 'y', 'y', 'h', 'i', 'k']
+
+    assert_equal expected, @decipher.split_input
   end
 
   def test_it_has_shifts
@@ -24,12 +26,6 @@ class DecipherTest < Minitest::Test
     expected = ('a'..'z').to_a << ' '
 
     assert_equal expected, @decipher.characters
-  end
-
-  def test_it_can_split_its_message
-    expected = ['t', 'g', 'y', 'y', 'h', 'i', 'k']
-
-    assert_equal expected, @decipher.split_input
   end
 
   def test_it_can_decrypt_sets_of_four
