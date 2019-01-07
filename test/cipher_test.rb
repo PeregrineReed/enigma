@@ -4,6 +4,10 @@ require './lib/cipher'
 class CipherClass
   include Cipher
 
+  def characters
+    ('a'..'z').to_a << ' '
+  end
+
   def initialize(shifts)
     @shifts = shifts
   end
