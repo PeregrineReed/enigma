@@ -24,9 +24,9 @@ class Decipher
     end.flatten.join
   end
 
-  def translate
+  def decrypt
     code = []
-    split_message.each_slice(4) do |slice|
+    split_input.each_slice(4) do |slice|
       code << decrypt_4_digits(slice)
     end
     code.join
