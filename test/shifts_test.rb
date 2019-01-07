@@ -20,13 +20,6 @@ class ShiftsTest < Minitest::Test
     assert_equal "200792", @shifts.date
   end
 
-  def test_it_has_a_set
-    skip
-    expected = [7, 2, 6, 5]
-
-    assert_equal expected, @shifts.set
-  end
-
   def test_it_can_make_offsets
     expected = ['7', '2', '6', '4']
 
@@ -54,6 +47,12 @@ class ShiftsTest < Minitest::Test
     expected = [7, 2, 6, 5]
 
     assert_equal expected, @shifts.for_translation
+  end
+
+  def test_it_has_a_set_of_shifts_on_initialize
+    expected = [7, 2, 6, 5]
+
+    assert_equal expected, @shifts.set
   end
 
 end
