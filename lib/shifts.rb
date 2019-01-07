@@ -18,7 +18,7 @@ class Shifts
     Shifts.new(set, key, date)
   end
 
-  def self.offsets(date)
+  def offsets
     date_squared = date.to_i ** 2
     offsets = date_squared.to_s[-4..-1]
     offsets.split('')
