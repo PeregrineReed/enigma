@@ -1,11 +1,11 @@
 class Cipher
 
-  attr_reader :input,
+  attr_reader :split_input,
               :shifts,
               :message
 
   def initialize(input, key, date)
-    @input = input
+    @split_input = input.split('')
     @shifts = Shifts.new(key, date).set
     @message = encrypt
   end
@@ -16,14 +16,10 @@ class Cipher
 
   def encrypt
     code = []
-    split_message.each_slice(4) do |slice|
+    split_input.each_slice(4) do |slice|
       code << encrypt_4_digits(slice)
     end
     code.join
-  end
-
-  def split_message
-    @input.split('')
   end
 
   def encrypt_4_digits(four)
