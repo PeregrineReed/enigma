@@ -1,30 +1,4 @@
-class Cipher
-
-  attr_reader :input,
-              :shifts,
-              :message
-
-  def initialize(input, key, date)
-    @input = input
-    @shifts = Shifts.for_translation(key, date).set
-    @message = encrypt
-  end
-
-  def characters
-    ('a'..'z').to_a << ' '
-  end
-
-  def encrypt
-    code = []
-    split_message.each_slice(4) do |slice|
-      code << encrypt_4_digits(slice)
-    end
-    code.join
-  end
-
-  def split_message
-    @input.split('')
-  end
+module Cipher
 
   def encrypt_4_digits(four)
     four.map do |letter|
