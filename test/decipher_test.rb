@@ -42,4 +42,10 @@ class DecipherTest < Minitest::Test
     assert_equal expected, @decipher.decrypt
   end
 
+  def test_it_initializes_with_its_message_decrypted
+    expected = 'message'
+
+    assert_equal expected, @decipher.message
+  end
+
 end
