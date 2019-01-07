@@ -27,4 +27,11 @@ class CipherTest < Minitest::Test
     assert_equal true, actual
   end
 
+  def test_it_can_encrypt_sets_of_four
+    message = ['t', 'e', 's', 't']
+    expected = ' gy '
+
+    assert_equal expected, @cipher.encrypt_4_digits(message)
+  end
+
 end
