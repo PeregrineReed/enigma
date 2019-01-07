@@ -6,6 +6,9 @@ class CipherTest < Minitest::Test
 
   def setup
     @cipher = Cipher.new('message', '00001', '200792')
+
+    # planning to build a module for this
+    @cipher.stubs(:characters => ('a'..'z').to_a << ' ')
   end
 
   def test_it_exists
@@ -24,6 +27,13 @@ class CipherTest < Minitest::Test
     expected = ['m', 'e', 's', 's', 'a', 'g', 'e']
 
     assert_equal expected, @cipher.split_message
+  end
+
+  def test_it_can_encrypt_sets_of_four
+    message = ['t', 'e', 's', 't']
+    expected = ' gy '
+
+    assert_equal expected, @cipher.encrypt_4_digits(message)
   end
 
 end
