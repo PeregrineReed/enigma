@@ -26,6 +26,12 @@ class DecipherTest < Minitest::Test
     assert_equal expected, @decipher.characters
   end
 
+  def test_it_can_split_its_message
+    expected = ['t', 'g', 'y', 'y', 'h', 'i', 'k']
+
+    assert_equal expected, @decipher.split_input
+  end
+
   def test_it_can_decrypt_sets_of_four
     skip
     message = [' ', 'g', 'y', ' ']
