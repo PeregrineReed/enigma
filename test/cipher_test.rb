@@ -8,7 +8,7 @@ class CipherTest < Minitest::Test
     @cipher = Cipher.new('message', '00001', '200792')
 
     # planning to build a module for this
-    @cipher.stubs(:characters => ('a'..'z').to_a << ' ')
+    # @cipher.stubs(:characters => ('a'..'z').to_a << ' ')
   end
 
   def test_it_exists
@@ -22,6 +22,12 @@ class CipherTest < Minitest::Test
 
   def test_it_has_shifts
     assert_equal [7, 2, 6, 5], @cipher.shifts
+  end
+
+  def test_it_has_a_list_of_characters
+    expected = ('a'..'z').to_a << ' '
+
+    assert_equal expected, @cipher.characters
   end
 
   def test_it_can_split_its_message
@@ -41,10 +47,6 @@ class CipherTest < Minitest::Test
     expected = 'tgyyhik'
 
     assert_equal expected, @cipher.encrypt
-  end
-
-  def test_it_initializes_with_its_message_encrypted
-    assert_equal 'tgyyhik', @cipher.message
   end
 
 end
