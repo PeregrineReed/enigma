@@ -12,6 +12,10 @@ class DecipherTest < Minitest::Test
     assert_instance_of Decipher, @decipher
   end
 
+  def test_it_has_an_input_message
+    assert_equal 'tgyyhik', @decipher.input
+  end
+
   def test_it_can_decrypt_sets_of_four
     skip
     message = [' ', 'g', 'y', ' ']
