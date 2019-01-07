@@ -15,4 +15,8 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Enigma, @enigma
   end
 
+  def test_it_has_a_message
+    assert_equal 'message', @enigma.message
+  end
+
 end
