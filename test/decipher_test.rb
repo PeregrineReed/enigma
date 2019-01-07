@@ -19,4 +19,12 @@ class DecipherTest < Minitest::Test
     @decipher = DecipherClass.new([7,2,6,5])
   end
 
+  def test_it_exists
+    actual = DecipherClass.included_modules.any? do |mod|
+      mod == Decipher
+    end
+
+    assert_equal true, actual
+  end
+
 end
