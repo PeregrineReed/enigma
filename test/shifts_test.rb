@@ -50,7 +50,7 @@ class ShiftsTest < Minitest::Test
   end
 
   def test_it_can_initialize_for_encryption
-    shifts = Shifts.for_encryption('00001', '200792')
+    shifts = Shifts.for_translation('00001', '200792')
     expected = [7, 2, 6, 5]
 
     assert_equal expected, shifts.set
