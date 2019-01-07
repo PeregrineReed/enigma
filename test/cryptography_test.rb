@@ -1,5 +1,7 @@
 require './test/test_helper'
 require './lib/shifts'
+require './lib/cipher'
+require './lib/decipher'
 require './lib/cryptography'
 
 class CryptographyTest < Minitest::Test
@@ -33,6 +35,7 @@ class CryptographyTest < Minitest::Test
   end
 
   def test_it_can_encrypt_sets_of_four
+    skip
     message = ['t', 'e', 's', 't']
     expected = ' gy '
 
@@ -40,12 +43,14 @@ class CryptographyTest < Minitest::Test
   end
 
   def test_it_can_encrypt_a_full_message
+    skip
     expected = 'tgyyhik'
 
     assert_equal expected, @cryptography.encrypt
   end
 
   def test_it_initializes_with_its_message_encrypted
+    skip
     assert_equal 'tgyyhik', @cryptography.message
   end
 

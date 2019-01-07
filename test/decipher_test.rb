@@ -1,35 +1,31 @@
 require './test/test_helper'
+require './lib/shifts'
 require './lib/decipher'
-
-class DecipherClass
-  include Decipher
-
-  def initialize(shifts)
-    @shifts = shifts
-  end
-
-  def split_message
-    ['t', 'g', 'y', 'y', 'h', 'i', 'k']
-  end
-
-  def characters
-    ('a'..'z').to_a << ' '
-  end
-
-end
 
 class DecipherTest < Minitest::Test
 
   def setup
-    @decipher = DecipherClass.new([7,2,6,5])
+    @decipher = Decipher.new('tgyyhik', '00001', '200792')
   end
 
   def test_it_exists
-    actual = DecipherClass.included_modules.any? do |mod|
-      mod == Decipher
-    end
+    assert_instance_of Decipher, @decipher
+  end
 
-    assert_equal true, actual
+  def test_it_splits_its_input_message
+    expected = ['t', 'g', 'y', 'y', 'h', 'i', 'k']
+
+    assert_equal expected, @decipher.split_input
+  end
+
+  def test_it_has_shifts
+    assert_equal [7,2,6,5], @decipher.shifts
+  end
+
+  def test_it_has_a_list_of_characters
+    expected = ('a'..'z').to_a << ' '
+
+    assert_equal expected, @decipher.characters
   end
 
   def test_it_can_decrypt_sets_of_four
@@ -42,7 +38,7 @@ class DecipherTest < Minitest::Test
   def test_it_can_decrypt_any_length_message
     expected = 'message'
 
-    assert_equal expected, @decipher.translate
+    assert_equal expected, @decipher.decrypt
   end
 
 end

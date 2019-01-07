@@ -1,34 +1,31 @@
 require './test/test_helper'
+require './lib/shifts'
 require './lib/cipher'
-
-class CipherClass
-  include Cipher
-
-  def characters
-    ('a'..'z').to_a << ' '
-  end
-
-  def split_message
-    ['m', 'e', 's', 's', 'a', 'g', 'e']
-  end
-
-  def initialize(shifts)
-    @shifts = shifts
-  end
-end
 
 class CipherTest < Minitest::Test
 
   def setup
-    @cipher = CipherClass.new([7,2,6,5])
+    @cipher = Cipher.new('message', '00001', '200792')
   end
 
   def test_it_exists
-    actual = CipherClass.included_modules.any? do |mod|
-      mod == Cipher
-    end
+    assert_instance_of Cipher, @cipher
+  end
 
-    assert_equal true, actual
+  def test_it_splits_its_input_message
+    expected = ['m', 'e', 's', 's', 'a', 'g', 'e']
+
+    assert_equal expected, @cipher.split_input
+  end
+
+  def test_it_has_shifts
+    assert_equal [7, 2, 6, 5], @cipher.shifts
+  end
+
+  def test_it_has_a_list_of_characters
+    expected = ('a'..'z').to_a << ' '
+
+    assert_equal expected, @cipher.characters
   end
 
   def test_it_can_encrypt_sets_of_four
@@ -38,10 +35,14 @@ class CipherTest < Minitest::Test
     assert_equal expected, @cipher.encrypt_4_digits(message)
   end
 
-  def test_it_can_encrypt_any_length_message
+  def test_it_can_encrypt_a_full_message
     expected = 'tgyyhik'
 
-    assert_equal expected, @cipher.translate
+    assert_equal expected, @cipher.encrypt
+  end
+
+  def test_it_initializes_with_its_message_encrypted
+    assert_equal 'tgyyhik', @cipher.message
   end
 
 end
