@@ -45,4 +45,8 @@ class CipherTest < Minitest::Test
     assert_equal expected, @cipher.encrypt
   end
 
+  def test_it_initializes_with_its_message_encrypted
+    assert_equal 'tgyyhik', @cipher.message
+  end
+
 end
