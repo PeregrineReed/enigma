@@ -39,4 +39,10 @@ class DecipherTest < Minitest::Test
     assert_equal expected, @decipher.decrypt_4_digits(message)
   end
 
+  def test_it_can_decrypt_any_length_message
+    expected = 'message'
+
+    assert_equal expected, @decipher.translate
+  end
+
 end
