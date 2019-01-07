@@ -27,4 +27,11 @@ class DecipherTest < Minitest::Test
     assert_equal true, actual
   end
 
+  def test_it_can_decrypt_sets_of_four
+    message = [' ', 'g', 'y', ' ']
+    expected = 'test'
+
+    assert_equal expected, @decipher.encrypt_4_digits(message)
+  end
+
 end
