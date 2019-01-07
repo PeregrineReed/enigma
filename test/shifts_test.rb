@@ -45,10 +45,9 @@ class ShiftsTest < Minitest::Test
   end
 
   def test_it_can_make_keys
-    skip
     expected = ['00', '00', '00', '01']
 
-    assert_equal expected, Shifts.keys('00001')
+    assert_equal expected, @shifts.keys
   end
 
   def test_it_can_initialize_for_encryption
