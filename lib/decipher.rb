@@ -1,15 +1,15 @@
 class Decipher
 
+  include Characters
+
   attr_reader :split_input,
-              :shifts
+              :shifts,
+              :message
 
   def initialize(input, key, date)
     @split_input = input.split('')
     @shifts = Shifts.new(key, date).set
-  end
-
-  def characters
-    ('a'..'z').to_a << ' '
+    @message = decrypt
   end
 
   def decrypt_4_digits(four)
