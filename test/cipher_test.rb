@@ -6,18 +6,14 @@ class CipherTest < Minitest::Test
 
   def setup
     @cipher = Cipher.new('message', '00001', '200792')
-
-    # planning to build a module for this
-    # @cipher.stubs(:characters => ('a'..'z').to_a << ' ')
   end
 
   def test_it_exists
     assert_instance_of Cipher, @cipher
   end
 
-  def test_it_has_a_message
-    skip
-    assert_equal 'message', @cipher.message
+  def test_it_has_an_input_message
+    assert_equal 'message', @cipher.input
   end
 
   def test_it_has_shifts
