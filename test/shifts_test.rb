@@ -5,7 +5,7 @@ class ShiftsTest < Minitest::Test
 
   def setup
     shifts = [7, 2, 6, 5]
-    @shifts = Shifts.new(shifts, "00001", "200792")
+    @shifts = Shifts.new("00001", "200792")
   end
 
   def test_it_exists
@@ -20,16 +20,10 @@ class ShiftsTest < Minitest::Test
     assert_equal "200792", @shifts.date
   end
 
-  def test_it_has_a_set
-    expected = [7, 2, 6, 5]
-
-    assert_equal expected, @shifts.set
-  end
-
   def test_it_can_make_offsets
     expected = ['7', '2', '6', '4']
 
-    assert_equal expected, Shifts.offsets("200792")
+    assert_equal expected, @shifts.offsets
   end
 
   def test_it_can_make_key_pairs
@@ -40,20 +34,25 @@ class ShiftsTest < Minitest::Test
       ["0", "1"]
     ]
 
-    assert_equal expected, Shifts.make_key_pairs('00001')
+    assert_equal expected, @shifts.make_key_pairs
   end
 
   def test_it_can_make_keys
     expected = ['00', '00', '00', '01']
 
-    assert_equal expected, Shifts.keys('00001')
+    assert_equal expected, @shifts.keys
   end
 
-  def test_it_can_initialize_for_encryption
-    shifts = Shifts.for_translation('00001', '200792')
+  def test_it_can_create_shifts_for_translation
     expected = [7, 2, 6, 5]
 
-    assert_equal expected, shifts.set
+    assert_equal expected, @shifts.for_translation
+  end
+
+  def test_it_has_a_set_of_shifts_on_initialize
+    expected = [7, 2, 6, 5]
+
+    assert_equal expected, @shifts.set
   end
 
 end
