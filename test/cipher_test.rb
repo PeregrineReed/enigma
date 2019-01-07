@@ -12,8 +12,10 @@ class CipherTest < Minitest::Test
     assert_instance_of Cipher, @cipher
   end
 
-  def test_it_has_an_input_message
-    assert_equal 'message', @cipher.input
+  def test_it_splits_its_input_message
+    expected = ['m', 'e', 's', 's', 'a', 'g', 'e']
+
+    assert_equal expected, @cipher.split_input
   end
 
   def test_it_has_shifts
@@ -24,12 +26,6 @@ class CipherTest < Minitest::Test
     expected = ('a'..'z').to_a << ' '
 
     assert_equal expected, @cipher.characters
-  end
-
-  def test_it_can_split_its_message
-    expected = ['m', 'e', 's', 's', 'a', 'g', 'e']
-
-    assert_equal expected, @cipher.split_message
   end
 
   def test_it_can_encrypt_sets_of_four
