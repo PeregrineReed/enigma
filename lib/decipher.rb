@@ -12,6 +12,10 @@ class Decipher
     ('a'..'z').to_a << ' '
   end
 
+  def split_input
+    @input.split('')
+  end
+
   def decrypt_4_digits(four)
     four.map do |letter|
       shift = @shifts[four.index(letter)]
