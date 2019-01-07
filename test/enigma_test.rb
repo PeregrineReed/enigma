@@ -23,4 +23,11 @@ class EnigmaTest < Minitest::Test
     assert_equal '00001', @enigma.key
   end
 
+  def test_it_can_generate_a_key
+    skip
+    enigma = Enigma.new("testing testing")
+    actual = /\d\d\d\d\d/ =~ enigma.key
+    assert_equal true, actual
+  end
+
 end
