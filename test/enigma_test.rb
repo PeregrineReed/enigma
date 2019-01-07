@@ -27,11 +27,20 @@ class EnigmaTest < Minitest::Test
     assert_equal '200792', @enigma.date
   end
 
+  def test_it_can_generate_todays_date
+    skip
+    enigma = Enigma.new("testing testing", "12345")
+    expected = Date.today.strftime('d','m','y')
+    assert_equal expected, enigma.date
+  end
+
   def test_it_can_generate_a_key
     skip
     enigma = Enigma.new("testing testing")
     actual = /\d\d\d\d\d/ =~ enigma.key
     assert_equal true, actual
   end
+
+
 
 end
