@@ -9,7 +9,6 @@ class ShiftsTest < Minitest::Test
   end
 
   def test_it_exists
-    skip
     assert_instance_of Shifts, @shifts
   end
 
