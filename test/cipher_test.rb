@@ -8,6 +8,10 @@ class CipherClass
     ('a'..'z').to_a << ' '
   end
 
+  def split_message
+    ['m', 'e', 's', 's', 'a', 'g', 'e']
+  end
+
   def initialize(shifts)
     @shifts = shifts
   end
