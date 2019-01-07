@@ -10,7 +10,7 @@ class Shifts
     @date = date
   end
 
-  def self.for_encryption(key, date)
+  def self.for_translation(key, date)
     shifts = keys(key).zip(offsets(date))
     set = shifts.map do |pair|
       pair[0].to_i + pair[1].to_i
