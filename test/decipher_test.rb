@@ -1,0 +1,22 @@
+require './test/test_helper'
+require './lib/decipher'
+
+class DecipherClass
+  include Decipher
+
+  def characters
+    ('a'..'z').to_a << ' '
+  end
+
+  def initialize(shifts)
+    @shifts = shifts
+  end
+end
+
+class DecipherTest < Minitest::Test
+
+  def setup
+    @decipher = DecipherClass.new([7,2,6,5])
+  end
+
+end
