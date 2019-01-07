@@ -8,6 +8,14 @@ class Cipher
     @shifts = Shifts.for_encryption(key, date).set
   end
 
+  def encrypt
+    code = []
+    split_message.each_slice(4) do |slice|
+      code << encrypt_4_digits(slice)
+    end
+    code.join
+  end
+
   def split_message
     message.split('')
   end
