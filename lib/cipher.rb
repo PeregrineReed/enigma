@@ -8,4 +8,12 @@ module Cipher
     end.flatten.join
   end
 
+  def translate
+    code = []
+    split_message.each_slice(4) do |slice|
+      code << encrypt_4_digits(slice)
+    end
+    code.join
+  end
+
 end
