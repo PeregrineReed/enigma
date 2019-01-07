@@ -16,7 +16,7 @@ class CipherTest < Minitest::Test
   end
 
   def test_it_has_a_message
-    assert_equal "message", @cipher.message
+    assert_equal 'message', @cipher.message
   end
 
   def test_it_has_shifts
@@ -34,6 +34,12 @@ class CipherTest < Minitest::Test
     expected = ' gy '
 
     assert_equal expected, @cipher.encrypt_4_digits(message)
+  end
+
+  def test_it_can_encrypt_a_full_message
+    expected = 'tgyyhik'
+
+    assert_equal expected, @cipher.encrypt
   end
 
 end
