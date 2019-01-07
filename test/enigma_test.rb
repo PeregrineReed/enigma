@@ -23,6 +23,10 @@ class EnigmaTest < Minitest::Test
     assert_equal '00001', @enigma.key
   end
 
+  def test_it_has_a_date
+    assert_equal '200792', @enigma.date
+  end
+
   def test_it_can_generate_a_key
     skip
     enigma = Enigma.new("testing testing")
