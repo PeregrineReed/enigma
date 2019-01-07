@@ -1,11 +1,13 @@
 class Decipher
 
   attr_reader :input,
-              :key
+              :key,
+              :date
 
   def initialize(input, key, date)
     @input = input
     @key = key
+    @date = date
   end
 
   def decrypt_4_digits(four)
