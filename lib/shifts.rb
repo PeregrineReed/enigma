@@ -5,17 +5,16 @@ class Shifts
               :date
 
   def initialize(key, date)
-    @set = set
     @key = key
     @date = date
+    @set = for_translation
   end
 
-  def self.for_translation(key, date)
-    shifts = keys(key).zip(offsets(date))
+  def for_translation
+    shifts = keys.zip(offsets)
     set = shifts.map do |pair|
       pair[0].to_i + pair[1].to_i
     end.flatten
-    Shifts.new(set, key, date)
   end
 
   def offsets
