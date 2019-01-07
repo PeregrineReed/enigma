@@ -31,7 +31,7 @@ class DecipherTest < Minitest::Test
     message = [' ', 'g', 'y', ' ']
     expected = 'test'
 
-    assert_equal expected, @decipher.encrypt_4_digits(message)
+    assert_equal expected, @decipher.decrypt_4_digits(message)
   end
 
 end
