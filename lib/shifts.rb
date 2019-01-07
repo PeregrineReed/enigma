@@ -4,7 +4,7 @@ class Shifts
               :key,
               :date
 
-  def initialize(set, key, date)
+  def initialize(key, date)
     @set = set
     @key = key
     @date = date
