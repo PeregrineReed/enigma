@@ -8,6 +8,10 @@ class CipherClass
     ('a'..'z').to_a << ' '
   end
 
+  def split_message
+    ['m', 'e', 's', 's', 'a', 'g', 'e']
+  end
+
   def initialize(shifts)
     @shifts = shifts
   end
@@ -32,6 +36,12 @@ class CipherTest < Minitest::Test
     expected = ' gy '
 
     assert_equal expected, @cipher.encrypt_4_digits(message)
+  end
+
+  def test_it_can_encrypt_any_length_message
+    expected = 'tgyyhik'
+
+    assert_equal expected, @cipher.translate
   end
 
 end
