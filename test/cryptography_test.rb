@@ -1,5 +1,7 @@
 require './test/test_helper'
 require './lib/shifts'
+require './lib/cipher'
+require './lib/decipher'
 require './lib/cryptography'
 
 class CryptographyTest < Minitest::Test
