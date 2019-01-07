@@ -1,7 +1,8 @@
 class Cipher
 
-  attr_reader :message,
-              :shifts
+  attr_reader :input,
+              :shifts,
+              :message
 
   def initialize(input, key, date)
     @input = input
