@@ -24,7 +24,7 @@ class Shifts
     offsets.split('')
   end
 
-  def self.make_key_pairs(key)
+  def make_key_pairs
     key_list = []
     key.split('').each_cons(2) do |key|
       key_list << key
