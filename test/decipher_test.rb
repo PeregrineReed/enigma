@@ -33,7 +33,6 @@ class DecipherTest < Minitest::Test
   end
 
   def test_it_can_decrypt_sets_of_four
-    skip
     message = [' ', 'g', 'y', ' ']
     expected = 'test'
 
