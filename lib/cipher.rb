@@ -3,9 +3,14 @@ class Cipher
   attr_reader :message,
               :shifts
 
-  def initialize(message, key, date)
-    @message = message
+  def initialize(input, key, date)
+    @input = input
     @shifts = Shifts.for_encryption(key, date).set
+    @message = encrypt
+  end
+
+  def characters
+    ('a'..'z').to_a << ' '
   end
 
   def encrypt
@@ -17,7 +22,7 @@ class Cipher
   end
 
   def split_message
-    message.split('')
+    @input.split('')
   end
 
   def encrypt_4_digits(four)
