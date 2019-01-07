@@ -1,4 +1,7 @@
-module Decipher
+class Decipher
+
+  def initialize(message, key, date)
+  end
 
   def decrypt_4_digits(four)
     four.map do |letter|
