@@ -20,6 +20,10 @@ class DecipherTest < Minitest::Test
     assert_equal '00001', @decipher.key
   end
 
+  def test_it_has_a_date
+    assert_equal '200792', @decipher.date
+  end
+
   def test_it_can_decrypt_sets_of_four
     skip
     message = [' ', 'g', 'y', ' ']
