@@ -1,4 +1,4 @@
-class Cipher
+class Cryptography
 
   attr_reader :input,
               :shifts,
@@ -6,7 +6,7 @@ class Cipher
 
   def initialize(input, key, date)
     @input = input
-    @shifts = Shifts.for_translation(key, date).set
+    @shifts = Shifts.new(key, date).set
     @message = encrypt
   end
 
