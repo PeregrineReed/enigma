@@ -19,4 +19,8 @@ class EnigmaTest < Minitest::Test
     assert_equal 'message', @enigma.message
   end
 
+  def test_it_has_a_key
+    assert_equal '00001', @enigma.key
+  end
+
 end
