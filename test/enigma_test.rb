@@ -41,6 +41,15 @@ class EnigmaTest < Minitest::Test
     assert_equal true, actual
   end
 
+  def test_it_can_encrypt
+    expected = {
+      encryption: 'tgyyhik',
+      key: '00001',
+      date: '200792'
+    }
+    actual = @enigma.encrypt('message', '00001', '200792')
 
+    assert_equal expected, actual
+  end
 
 end
