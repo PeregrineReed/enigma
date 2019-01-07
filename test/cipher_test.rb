@@ -16,6 +16,7 @@ class CipherTest < Minitest::Test
   end
 
   def test_it_has_a_message
+    skip
     assert_equal 'message', @cipher.message
   end
 
