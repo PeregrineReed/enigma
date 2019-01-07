@@ -40,10 +40,9 @@ class DecipherTest < Minitest::Test
   end
 
   def test_it_can_decrypt_any_length_message
-    skip
     expected = 'message'
 
-    assert_equal expected, @decipher.translate
+    assert_equal expected, @decipher.decrypt
   end
 
 end
