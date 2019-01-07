@@ -4,27 +4,26 @@ class Shifts
               :key,
               :date
 
-  def initialize(set, key, date)
-    @set = set
+  def initialize(key, date)
     @key = key
     @date = date
+    @set = for_translation
   end
 
-  def self.for_translation(key, date)
-    shifts = keys(key).zip(offsets(date))
+  def for_translation
+    shifts = keys.zip(offsets)
     set = shifts.map do |pair|
       pair[0].to_i + pair[1].to_i
     end.flatten
-    Shifts.new(set, key, date)
   end
 
-  def self.offsets(date)
+  def offsets
     date_squared = date.to_i ** 2
     offsets = date_squared.to_s[-4..-1]
     offsets.split('')
   end
 
-  def self.make_key_pairs(key)
+  def make_key_pairs
     key_list = []
     key.split('').each_cons(2) do |key|
       key_list << key
@@ -32,8 +31,8 @@ class Shifts
     key_list
   end
 
-  def self.keys(key)
-    make_key_pairs(key).map do |pair|
+  def keys
+    make_key_pairs.map do |pair|
       pair.join
     end.flatten
   end
