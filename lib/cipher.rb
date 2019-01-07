@@ -1,5 +1,7 @@
 class Cipher
 
+  include Characters
+
   attr_reader :split_input,
               :shifts,
               :message
@@ -8,10 +10,6 @@ class Cipher
     @split_input = input.split('')
     @shifts = Shifts.new(key, date).set
     @message = encrypt
-  end
-
-  def characters
-    ('a'..'z').to_a << ' '
   end
 
   def encrypt
