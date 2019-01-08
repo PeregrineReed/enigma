@@ -37,10 +37,9 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_can_generate_todays_date_for_encrypting
-    skip
-    expected = Date.today.strftime('d','m','y')
+    expected = Date.today.strftime('%d%m%y')
     actual = @enigma.encrypt("testing testing", "12345")
-    assert_equal expected, actual
+    assert_equal expected, actual[:date]
   end
 
   def test_it_can_generate_a_key_for_encrypting
