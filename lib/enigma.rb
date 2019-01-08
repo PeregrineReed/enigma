@@ -7,8 +7,9 @@ class Enigma
   end
 
   def encrypt(message, key, date = @today)
+    cipher = Cipher.new(message, key, date)
     {
-    encryption: message,
+    encryption: cipher.message,
     key: key,
     date: date
     }
