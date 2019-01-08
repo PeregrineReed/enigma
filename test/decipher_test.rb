@@ -1,5 +1,6 @@
 require './test/test_helper'
 require './lib/shifts'
+require './lib/characters'
 require './lib/decipher'
 
 class DecipherTest < Minitest::Test
@@ -39,6 +40,12 @@ class DecipherTest < Minitest::Test
     expected = 'message'
 
     assert_equal expected, @decipher.decrypt
+  end
+
+  def test_it_initializes_with_its_message_decrypted
+    expected = 'message'
+
+    assert_equal expected, @decipher.message
   end
 
 end
