@@ -1,12 +1,10 @@
 class Enigma
 
-  attr_reader :message,
-              :key,
-              :date
-
-  def initialize(message, key, date)
-    @message = message
-    @key = key
-    @date = date
+  def encrypt(message, key = '1', date = '1')
+    {
+    encryption: message,
+    key: key,
+    date: date
+    }
   end
 end
