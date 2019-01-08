@@ -1,6 +1,12 @@
 class Enigma
 
-  def encrypt(message, key = '1', date = '1')
+  attr_reader :today
+
+  def initialize
+    @today = Date.today.strftime('%d%m%y')
+  end
+
+  def encrypt(message, key, date)
     {
     encryption: message,
     key: key,
