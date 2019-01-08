@@ -5,6 +5,7 @@ require './lib/decipher'
 require './lib/cipher'
 require './lib/enigma'
 require 'pry'
+require 'date'
 
 class EnigmaTest < Minitest::Test
 
@@ -16,7 +17,14 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Enigma, @enigma
   end
 
+  def test_it_has_todays_date
+    expected = Date.today.strftime('d','m','y')
+
+    assert_equal expected, @enigma.date
+  end
+
   def test_it_can_encrypt
+    skip
     expected = {
       encryption: 'tgyyhik',
       key: '00001',
