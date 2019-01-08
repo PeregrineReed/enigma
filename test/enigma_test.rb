@@ -4,6 +4,7 @@ require './lib/characters'
 require './lib/decipher'
 require './lib/cipher'
 require './lib/enigma'
+require 'pry'
 
 class EnigmaTest < Minitest::Test
 
@@ -21,6 +22,7 @@ class EnigmaTest < Minitest::Test
       key: '00001',
       date: '200792'
     }
+
     actual = @enigma.encrypt('message', '00001', '200792')
 
     assert_equal expected, actual
