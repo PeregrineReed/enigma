@@ -1,5 +1,7 @@
 class Enigma
 
+  include Interface
+
   attr_reader :today
 
   def initialize
