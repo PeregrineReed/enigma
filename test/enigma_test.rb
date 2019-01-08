@@ -72,4 +72,11 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, actual
   end
 
+  def test_it_includes_interface
+    actual = Enigma.included_modules.any? do |mod|
+      mod == Interface
+    end
+    assert_equal true, actual
+  end
+
 end
