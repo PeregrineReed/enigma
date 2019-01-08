@@ -42,9 +42,15 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_can_generate_a_key_for_encrypting
-    skip
     enigma = @enigma.encrypt("testing testing")
-    actual = /\d\d\d\d\d/ =~ enigma.key
+    # To clarify I understand what I'm doing:
+    # in the parentheses, if the enigma[:key]
+    # contains any values from 0-9, 5 times, the return
+    # would be the index where the match starts.
+    # The !! outside the parentheses converts
+    # the outcome to a boolean.
+    actual = !!(enigma[:key] =~ /\d{5}/)
+
     assert_equal true, actual
   end
 
