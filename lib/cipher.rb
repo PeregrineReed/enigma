@@ -13,27 +13,21 @@ class Cipher
   end
 
   def encrypt
-    code = []
-    split_input.each_slice(4) do |slice|
-      code << encrypt_4_digits(slice)
-    end
-    code.join
+    counter = 0
+    split_input.map do |letter|
+      new_char = encrypt_digit(letter, counter)
+      counter == 3 ? counter = 0 : counter += 1
+      new_char
+    end.join
   end
 
-  def encrypt_4_digits(four)
-    four.map do |letter|
-      shift = @shifts[four.index(letter)]
-      index = characters.index(letter)
-      encrypt_digit(letter, shift, index)
-    end.flatten.join
-  end
-
-  def encrypt_digit(letter, shift, index)
+  def encrypt_digit(letter, index)
     if characters.include?(letter)
-      characters.rotate(shift).values_at(index)
+      shift_chars = characters.rotate(shifts[index])
+      shift_chars[characters.index(letter)]
     else
       letter
     end
   end
-
+  
 end
