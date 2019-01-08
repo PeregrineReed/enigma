@@ -29,14 +29,6 @@ class CipherTest < Minitest::Test
     assert_equal expected, @cipher.characters
   end
 
-  def test_it_can_encrypt_sets_of_four
-    skip
-    message = ['t', 'e', 's', 't']
-    expected = ' gy '
-
-    assert_equal expected, @cipher.encrypt_4_digits(message)
-  end
-
   def test_it_can_ignore_symbols_not_included_in_characters
     skip
     assert_equal ["u"], @cipher.encrypt_digit("h", 0)
@@ -44,15 +36,13 @@ class CipherTest < Minitest::Test
   end
 
   def test_it_can_encrypt_a_full_message
-    skip
-    expected = 'tgyyhik'
+    expected = 'tgyxhik'
 
     assert_equal expected, @cipher.encrypt
   end
 
   def test_it_initializes_with_its_message_encrypted
-    skip
-    assert_equal 'tgyyhik', @cipher.message
+    assert_equal 'tgyxhik', @cipher.message
   end
 
 end
