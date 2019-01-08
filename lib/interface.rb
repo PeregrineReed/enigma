@@ -5,4 +5,8 @@ module Interface
     file.read
   end
 
+  def new_file
+    File.open(ARGV[1], 'w')
+  end
+
 end
