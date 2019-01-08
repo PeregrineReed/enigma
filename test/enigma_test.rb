@@ -8,7 +8,7 @@ require './lib/enigma'
 class EnigmaTest < Minitest::Test
 
   def setup
-    @enigma = Enigma.new('message', '00001', '200792')
+    @enigma = Enigma.new
   end
 
   def test_it_exists
