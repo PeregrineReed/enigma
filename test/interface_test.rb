@@ -4,8 +4,8 @@ require './lib/interface'
 class InterfaceTest < Minitest::Test
 
   def setup
-    class = mock
-    @interface = Interface.new(class)
+    test_class = mock
+    @interface = Interface.new(test_class)
   end
 
   def test_it_exists
