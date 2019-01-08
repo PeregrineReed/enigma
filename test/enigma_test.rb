@@ -41,6 +41,12 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, actual[:date]
   end
 
+  def test_it_can_make_a_random_key
+    actual = !!(@enigma.rand_key =~ /\d{5}/)
+
+    assert_equal true, actual
+  end
+
   def test_it_can_generate_a_key_for_encrypting
     enigma = @enigma.encrypt("testing testing")
     # To clarify I understand what I'm doing:
