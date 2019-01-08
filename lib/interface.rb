@@ -9,4 +9,9 @@ module Interface
     File.open(ARGV[1], 'w')
   end
 
+  def write_file(alteration)
+    new_file.write(alteration)
+    new_file.close
+  end
+
 end
