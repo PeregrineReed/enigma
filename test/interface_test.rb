@@ -3,8 +3,12 @@ require './lib/interface'
 
 class InterfaceTest < Minitest::Test
 
+  class InterfaceClass
+    include Interface
+  end
+
   def setup
-    @interface = Interface.new
+    @interface = InterfaceClass.new
   end
 
   def test_it_exists
