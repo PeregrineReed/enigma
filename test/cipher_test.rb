@@ -30,9 +30,8 @@ class CipherTest < Minitest::Test
   end
 
   def test_it_can_ignore_symbols_not_included_in_characters
-    skip
-    assert_equal ["u"], @cipher.encrypt_digit("h", 0)
-    assert_equal "1", @cipher.encrypt_digit("1", 0, nil)
+    assert_equal "o", @cipher.encrypt_digit("h", 0)
+    assert_equal "1", @cipher.encrypt_digit("1", 0,)
   end
 
   def test_it_can_encrypt_a_full_message
