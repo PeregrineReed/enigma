@@ -24,8 +24,16 @@ class Cipher
     four.map do |letter|
       shift = @shifts[four.index(letter)]
       index = characters.index(letter)
-      characters.rotate(shift).values_at(index)
+      encrypt_digit(letter, shift, index)
     end.flatten.join
+  end
+
+  def encrypt_digit(letter, shift, index)
+    if characters.include?(letter)
+      characters.rotate(shift).values_at(index)
+    else
+      letter
+    end
   end
 
 end
