@@ -1,10 +1,8 @@
 class Interface
 
-  attr_reader :subject,
-              :commands
+  attr_reader :commands
 
-  def initialize(subject)
-    @subject = subject
+  def initialize
     @commands = ARGV
   end
 
