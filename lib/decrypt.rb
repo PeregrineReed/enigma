@@ -1,0 +1,7 @@
+require './lib/shifts'
+require './lib/characters'
+require './lib/cipher'
+require './lib/decipher'
+require './lib/interface'
+require './lib/enigma'
+require 'date'
