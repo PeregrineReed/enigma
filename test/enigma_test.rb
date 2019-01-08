@@ -18,7 +18,7 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_has_todays_date
-    expected = Date.today.strftime('d','m','y')
+    expected = Date.today.strftime('%d%m%y')
 
     assert_equal expected, @enigma.date
   end
