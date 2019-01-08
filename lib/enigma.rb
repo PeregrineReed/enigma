@@ -15,6 +15,15 @@ class Enigma
     }
   end
 
+  def decrypt(message, key, date = @today)
+    cipher = Decipher.new(message, key, date)
+    {
+    decryption: cipher.message,
+    key: key,
+    date: date
+    }
+  end
+
   def rand_key
     nums = (1..99999).to_a
     key = nums.sample.to_s
