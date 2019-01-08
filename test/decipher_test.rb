@@ -6,7 +6,7 @@ require './lib/decipher'
 class DecipherTest < Minitest::Test
 
   def setup
-    @decipher = Decipher.new('tgyyhik', '00001', '200792')
+    @decipher = Decipher.new('tgyxhik', '00001', '200792')
   end
 
   def test_it_exists
@@ -14,7 +14,7 @@ class DecipherTest < Minitest::Test
   end
 
   def test_it_splits_its_input_message
-    expected = ['t', 'g', 'y', 'y', 'h', 'i', 'k']
+    expected = ['t', 'g', 'y', 'x', 'h', 'i', 'k']
 
     assert_equal expected, @decipher.split_input
   end
@@ -29,16 +29,9 @@ class DecipherTest < Minitest::Test
     assert_equal expected, @decipher.characters
   end
 
-  def test_it_can_decrypt_sets_of_four
-    message = [' ', 'g', 'y', ' ']
-    expected = 'test'
-
-    assert_equal expected, @decipher.decrypt_4_digits(message)
-  end
-
   def test_it_ignores_symbols_not_included_in_characters
-    assert_equal ["m"], @decipher.decrypt_digit("t", 7, 19)
-    assert_equal "1", @decipher.decrypt_digit("1", 0, nil)
+    assert_equal "m", @decipher.decrypt_digit("t", 0)
+    assert_equal "1", @decipher.decrypt_digit("1", 0)
   end
 
   def test_it_can_decrypt_any_length_message
