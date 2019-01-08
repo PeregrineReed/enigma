@@ -12,7 +12,10 @@ class InterfaceTest < Minitest::Test
   end
 
   def test_it_exists
-    assert_instance_of Interface, @interface
+    actual = InterfaceClass.included_modules.any? do |mod|
+      mod == Interface
+    end
+    assert_equal true, actual
   end
 
 end
