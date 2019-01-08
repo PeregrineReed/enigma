@@ -36,6 +36,11 @@ class CipherTest < Minitest::Test
     assert_equal expected, @cipher.encrypt_4_digits(message)
   end
 
+  def test_it_can_ignore_symbols_not_included_in_characters
+    assert_equal ["u"], @cipher.encrypt_digit("h", 13, 7)
+    assert_equal "1", @cipher.encrypt_digit("1", 0, nil)
+  end
+
   def test_it_can_encrypt_a_full_message
     expected = 'tgyyhik'
 
