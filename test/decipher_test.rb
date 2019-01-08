@@ -36,6 +36,11 @@ class DecipherTest < Minitest::Test
     assert_equal expected, @decipher.decrypt_4_digits(message)
   end
 
+  def test_it_ignores_symbols_not_included_in_characters
+    assert_equal ["m"], @decipher.decrypt_digit("t", 7, 19)
+    assert_equal "1", @decipher.decrypt_digit("1", 0, nil)
+  end
+
   def test_it_can_decrypt_any_length_message
     expected = 'message'
 

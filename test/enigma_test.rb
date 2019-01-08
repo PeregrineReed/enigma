@@ -3,6 +3,7 @@ require './lib/shifts'
 require './lib/characters'
 require './lib/decipher'
 require './lib/cipher'
+require './lib/interface'
 require './lib/enigma'
 require 'pry'
 require 'date'
@@ -69,6 +70,13 @@ class EnigmaTest < Minitest::Test
     actual = @enigma.decrypt('tgyyhik', '00001', '200792')
 
     assert_equal expected, actual
+  end
+
+  def test_it_includes_interface
+    actual = Enigma.included_modules.any? do |mod|
+      mod == Interface
+    end
+    assert_equal true, actual
   end
 
 end
