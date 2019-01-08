@@ -26,7 +26,7 @@ class EnigmaTest < Minitest::Test
 
   def test_it_can_encrypt
     expected = {
-      encryption: 'tgyyhik',
+      encryption: 'tgyxhik',
       key: '00001',
       date: '200792'
     }
@@ -67,7 +67,7 @@ class EnigmaTest < Minitest::Test
       key: '00001',
       date: '200792'
     }
-    actual = @enigma.decrypt('tgyyhik', '00001', '200792')
+    actual = @enigma.decrypt('tgyxhik', '00001', '200792')
 
     assert_equal expected, actual
   end
