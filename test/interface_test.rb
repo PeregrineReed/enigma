@@ -11,8 +11,4 @@ class InterfaceTest < Minitest::Test
     assert_instance_of Interface, @interface
   end
 
-  def test_it_starts_with_no_commands
-    assert_equal [], @interface.commands
-  end
-
 end
