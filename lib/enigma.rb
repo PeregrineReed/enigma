@@ -14,4 +14,11 @@ class Enigma
     date: date
     }
   end
+
+  def rand_key
+    nums = (1..99999).to_a
+    key = nums.sample.to_s
+    key.length < 5 ? key.rjust(5, '0') : key
+  end
+
 end
