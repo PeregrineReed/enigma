@@ -1,12 +1,5 @@
 require './test/test_helper'
-require './lib/shifts'
-require './lib/characters'
-require './lib/decipher'
-require './lib/cipher'
-require './lib/interface'
 require './lib/enigma'
-require 'pry'
-require 'date'
 
 class EnigmaTest < Minitest::Test
 
