@@ -1,3 +1,6 @@
+require './lib/characters'
+require './lib/shifts'
+
 class Cipher
 
   include Characters
@@ -29,5 +32,5 @@ class Cipher
       letter
     end
   end
-  
+
 end
