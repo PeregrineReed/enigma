@@ -1,3 +1,8 @@
+require './lib/interface'
+require './lib/cipher'
+require './lib/decipher'
+require 'date'
+
 class Enigma
 
   include Interface

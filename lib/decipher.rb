@@ -1,3 +1,6 @@
+require './lib/characters'
+require './lib/shifts'
+
 class Decipher
 
   include Characters

@@ -1,6 +1,4 @@
 require './test/test_helper'
-require './lib/shifts'
-require './lib/characters'
 require './lib/cipher'
 
 class CipherTest < Minitest::Test
@@ -35,9 +33,12 @@ class CipherTest < Minitest::Test
   end
 
   def test_it_can_encrypt_a_full_message
+    cipher = Cipher.new('100% test coverage', '12345', '080119')
+    
     expected = 'tgyxhik'
 
     assert_equal expected, @cipher.encrypt
+    assert_equal '100%pqrkixpgkbdtwb', cipher.encrypt
   end
 
   def test_it_initializes_with_its_message_encrypted

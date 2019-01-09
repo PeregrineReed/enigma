@@ -1,6 +1,4 @@
 require './test/test_helper'
-require './lib/shifts'
-require './lib/characters'
 require './lib/decipher'
 
 class DecipherTest < Minitest::Test
@@ -35,9 +33,12 @@ class DecipherTest < Minitest::Test
   end
 
   def test_it_can_decrypt_any_length_message
+    decipher = Decipher.new('100%pqrkixpgkbdtwb', '12345', '080119')
+    
     expected = 'message'
 
     assert_equal expected, @decipher.decrypt
+    assert_equal '100% test coverage', decipher.decrypt
   end
 
   def test_it_initializes_with_its_message_decrypted
