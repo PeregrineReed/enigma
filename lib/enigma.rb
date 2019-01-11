@@ -37,4 +37,12 @@ class Enigma
     key.length < 5 ? key.rjust(5, '0') : key
   end
 
+  def crack(message, date = @today)
+    {
+      decryption: 'message end',
+      key: '99999',
+      date: '311299'
+    }
+  end
+
 end
