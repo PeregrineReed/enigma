@@ -4,7 +4,7 @@ require './lib/bombe'
 class BombeTest < Minitest::Test
 
   def setup
-    @bombe = Bombe.new
+    @bombe = Bombe.new("k jkzbwsciv\n", "311299")
   end
 
   def test_it_exists
